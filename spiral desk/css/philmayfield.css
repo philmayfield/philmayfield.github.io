@@ -1,0 +1,121 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+  min-width: 960px;
+  background:#000000 url(../images/wood_bg.jpg) top center repeat-y;
+  font-family:Arial, Helvetica, sans-serif;
+}
+
+.clear {
+  clear: both;
+  display: block;
+  overflow: hidden;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+}
+
+.center {margin-left:auto; margin-right:auto;}
+.tcenter {text-align:center;}
+.bold {font-weight:bold;}
+.caption {font-size:12px;}
+a:link, a:visited, a:active, a:hover {text-decoration:none;}
+
+.topspacer {min-height:20px;}
+.bottomspacer {min-height:20px;}
+
+header {padding:30px 0;}
+header h1 {font-family: 'Shadows Into Light Two', cursive; font-weight:bold; font-size:36px; color:#333;}
+header h2 {font-family: 'Shadows Into Light Two', cursive; font-weight:normal; color:#333; font-size:26px; margin-top:-10px;}
+
+.wrapper {width:960px; margin-left:auto; margin-right:auto;}
+
+.paper {
+	background:url(../images/graph_bg.jpg) top left repeat; 
+	margin:70px auto;
+	-webkit-border-radius: 5px;
+	border-radius: 10px;
+	-webkit-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1);
+	box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, 1); 
+	padding:0 0 15px 0;
+	z-index:1;
+	position:relative;
+}
+
+.binder {
+	background:url(../images/bind.png) top left repeat-y; 
+	position:relative; 
+	left:-18px;
+	padding:0 10px 0 100px;
+	height:auto;
+}
+
+.divline {clear:both; background:url(../images/div_line.png) center top no-repeat scroll; height:17px;}
+
+nav {margin-top:20px;}
+
+.menu {}
+.menu ul { list-style:none outside none; margin:0; padding:0 0 0 50px;}
+.menu li {
+	float:left; 
+	display:inline; 
+	min-height:1px;
+	height:30px;
+}
+.menu li:hover{
+	background:url(../images/menu_underline.png) center bottom no-repeat scroll;
+}
+.menu a {
+	font-family: 'Shadows Into Light Two', cursive;
+	letter-spacing:.15em;
+	color:#3333CC; 
+	font-size:16px; 
+	font-weight:bold;
+	min-height:1px;
+	padding:0 33px;
+	text-decoration:none;
+	white-space:nowrap;
+}
+
+.content {
+	margin:30px auto;
+}
+.content .homephoto {margin-bottom:30px;}
+.photo {
+	-webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .5);
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, .5); 
+}
+
+
+footer {}
+footer .links {text-align:center; font-size:12px; font-weight:bold; margin-top:20px;}
+footer .copyright {text-align:center; font-size:10px;}
+
+#note {
+	background:url(../images/note.png) center top no-repeat scroll transparent;
+	width:298px;
+	height:299px;
+	position:absolute;
+	left:50%;
+	top:100px;
+	z-index:100;
+}
+div.tabWebDesign {
+	width:95px;
+	height:107px;
+	background: url(../images/tabWebDesign.png) no-repeat scroll transparent;
+	position:absolute; 
+	top:200px;
+	left:50%;
+	margin-left:445px;
+}
+div.tabOn {
+	z-index:5;	
+	background-position:top center;
+}
+div.tabOff {
+	z-index:0;
+	background-position:bottom center;
+	margin-left:440px;
+}

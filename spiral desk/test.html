@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Test</title>
+
+<style>
+	body {background:#EEE;}
+	.raysHolder {width:1400px; height:500px; overflow:hidden;}
+	.rays {background:url(images/rays.png) top left no-repeat; width:1400px; height:1400px;}
+	.center {margin-left:auto; margin-right:auto; text-align:center;}
+	/*Styles for fuzz overlay & message box*/  
+	#fuzz{ position:absolute; top:0; left:0; width:100%; z-index:100; background: url(images/dim.png); display:none; text-align:left; }  
+      
+	/*Message box, positioned in dead center of browser*/  
+	.msgbox{ position:absolute; width:300px; height:200px; z-index:200; border:5px solid #222; background: #FFF; top: 50%; left: 50%; margin-top: -100px; margin-left: -150px; }  
+	.msgbox img {border:none; margin:5px;}  
+      
+	/*The "X" in the upper right corner of msgbox*/  
+	.close{ top:0px; float:rightright; }
+	
+	#yes {width:50px; background: #0F0; padding:10px; cursor:pointer;}
+	#no {width:50px; background:#FF0000; padding:10px; cursor:pointer;}
+	#clear {width:50px; background:#FF0; padding:10px; cursor:pointer;}
+</style>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js "></script>
+<script src="js/jquery.cookie.js"></script>
+
+<script>
+	if($.cookie('age') != '1'){
+		$(document).ready(function() {
+			$("#fuzz").show();  
+			return false;
+		});
+	}
+	
+    $(document).ready(function(){  
+      
+		//Adjust height of overlay to fill screen when page loads  
+		$("#fuzz").css("height", $(document).height());  
+      
+		//When the link that triggers the message is clicked fade in overlay/msgbox  
+		$(".alert").click(function(){  
+			$("#fuzz").fadeIn();  
+			return false;  
+		});  
+      
+		//When the message box is closed, fade out  
+		$(".close").click(function(){  
+			$("#fuzz").fadeOut();  
+			return false;  
+		});
+		
+		$("#yes").click(function(){
+			$.cookie('age', '1', {path:'/'});
+			
+			if($.cookie('age') == '1'){
+				alert('Cookie Set!');
+			}
+			
+			$("#fuzz").fadeOut();
+			return false;  
+		});
+		
+		$("#clear").click(function(){
+			if($.removeCookie('age')){
+				alert('Age cookie removed!');	
+			}
+		});
+		
+		$("#no").click(function(){
+			document.location.href = "http://www.google.com";
+		})
+      
+	});  
+      
+    //Adjust height of overlay to fill screen when browser gets resized  
+    $(window).bind("resize", function(){  
+		$("#fuzz").css("height", $(window).height());  
+    });  
+</script>
+
+</head>
+
+<body>
+
+<div id="fuzz">  
+	<div class="msgbox">  
+		<div id="yes">Yes</div>
+        <div id="no">No</div>
+        <div id="clear">Clear</div>
+	</div>  
+</div>  
+  
+<!--The content to be hidden-->  
+<div id="content">  
+	<a class="alert" href="#" >Alert Me!</a>  
+</div>  
+    
+</body>
+</html>

@@ -1,0 +1,55 @@
+.menu {
+	margin: 0;
+	overflow: hidden;
+	text-align: center;
+}
+.menu li {
+	background: #CCC;
+	display: block;
+	padding: 5px 10px;
+}
+.menu li.active {
+	background: #EEE;
+}
+
+.droptab-selector {
+	background: #AAA;
+	display: block;
+	height: 40px;
+}
+.droptab-select-current {
+	font-size: 20px;
+	line-height: 40px;
+	padding-left: 20px;
+}
+.droptab-select-button {
+	background: #999;
+	cursor: pointer;
+	float: right;
+	min-height: 100%;
+	width: 40px;
+}
+.droptab-select-button:after {
+	border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-top: 10px solid #333;
+    content: "";
+    height: 0;
+    position: absolute;
+    right: 10px;
+    top: 16px;
+    width: 0;
+}
+
+@media (min-width: 640px) {
+	.menu li {
+		display: inline-block;
+	}
+	.menu li + li {
+		margin-left: 10px;
+	}
+
+	.droptab-selector {
+		display: none;
+	}
+}
